@@ -1,4 +1,9 @@
 #!/bin/bash
+set -e
+handing_error(){
+    echo " error ocuur at line no:$1, command is:$2 "
+}
+trap 'handing_error${LINENO} "$BASH_COMMAND"'ERR
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
