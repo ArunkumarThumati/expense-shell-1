@@ -3,6 +3,8 @@
 source ./common.sh
 check_root
 
+echo "Please enter DB password:"
+read  mysql_root_password
 
 dnf module disable nodejs -y &>>$LOGFILE
 VALIDATE $? "Disabling default nodejs"
